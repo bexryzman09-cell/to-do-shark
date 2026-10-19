@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <header class="header">
+        <div class="container ">
+            <div class="header__wraper">
+                <div class="header__brand">
+                    <a href="" class="header__link"><img class="header__logo" width="190" height="190"
+                            src="/images/logo.png" alt="logo"></a>
+                    <div class="header__titles">
+                        <h1 class="header__title">TODO</h1>
+                        <p class="header__subtitle">Планируй.Делай.Достигай</p>
+                    </div>
+                </div>
+
+                <form class="task-form">
+                    <input placeholder="Например: Сделать д/з..." type="text" class="task-form__input">
+                    <input type="time" class="task-form__time">
+                    <button type="submit" class="add task-form__add"><svg class="icon icon--add" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 256 256">
+                            <title>add</title>
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="16">
+                                <circle cx="128" cy="128" r="112" />
+                                <path d="M 79.999992,128 H 176.0001" />
+                                <path d="m 128.00004,79.99995 v 96.0001" />
+                            </g>
+                        </svg></button>
+                </form>
+
+                <div class="theme-switch">
+                    <button class="theme-switch__btn theme-switch__btn--light"><svg class="icon icon--sun"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                            <title>ios-sunny</title>
+                            <path
+                                d="M256 387c-8.5 0-15.4 6.9-15.4 15.4v46.2c0 8.5 6.9 15.4 15.4 15.4s15.4-6.9 15.4-15.4v-46.2c0-8.5-6.9-15.4-15.4-15.4z"
+                                fill="currentColor" />
+                            <path
+                                d="M256 48c-8.5 0-15.4 6.9-15.4 15.4v46.2c0 8.5 6.9 15.4 15.4 15.4s15.4-6.9 15.4-15.4V63.4c0-8.5-6.9-15.4-15.4-15.4z"
+                                fill="currentColor" />
+                            <path
+                                d="M125 256c0-8.5-6.9-15.4-15.4-15.4H63.4c-8.5 0-15.4 6.9-15.4 15.4s6.9 15.4 15.4 15.4h46.2c8.5 0 15.4-6.9 15.4-15.4z"
+                                fill="currentColor" />
+                            <path
+                                d="M448.6 240.6h-46.2c-8.5 0-15.4 6.9-15.4 15.4s6.9 15.4 15.4 15.4h46.2c8.5 0 15.4-6.9 15.4-15.4s-6.9-15.4-15.4-15.4z"
+                                fill="currentColor" />
+                            <path
+                                d="M152.5 344.1c-4.1 0-8 1.6-10.9 4.5l-32.7 32.7c-2.9 2.9-4.5 6.8-4.5 10.9s1.6 8 4.5 10.9c2.9 2.9 6.8 4.5 10.9 4.5 4.1 0 8-1.6 10.9-4.5l32.7-32.7c6-6 6-15.8 0-21.8-2.9-2.9-6.8-4.5-10.9-4.5z"
+                                fill="currentColor" />
+                            <path
+                                d="M359.5 167.9c4.1 0 8-1.6 10.9-4.5l32.7-32.7c2.9-2.9 4.5-6.8 4.5-10.9s-1.6-8-4.5-10.9c-2.9-2.9-6.8-4.5-10.9-4.5-4.1 0-8 1.6-10.9 4.5l-32.7 32.7c-2.9 2.9-4.5 6.8-4.5 10.9s1.6 8 4.5 10.9c2.9 2.9 6.8 4.5 10.9 4.5z"
+                                fill="currentColor" />
+                            <path
+                                d="M130.7 108.9c-2.9-2.9-6.8-4.5-10.9-4.5-4.1 0-8 1.6-10.9 4.5-2.9 2.9-4.5 6.8-4.5 10.9 0 4.1 1.6 8 4.5 10.9l32.7 32.7c2.9 2.9 6.8 4.5 10.9 4.5 4.1 0 8-1.6 10.9-4.5 2.9-2.9 4.5-6.8 4.5-10.9s-1.6-8-4.5-10.9l-32.7-32.7z"
+                                fill="currentColor" />
+                            <path
+                                d="M370.4 348.6c-2.9-2.9-6.8-4.5-10.9-4.5-4.1 0-8 1.6-10.9 4.5-6 6-6 15.8 0 21.8l32.7 32.7c2.9 2.9 6.8 4.5 10.9 4.5 4.1 0 8-1.6 10.9-4.5 2.9-2.9 4.5-6.8 4.5-10.9s-1.6-8-4.5-10.9l-32.7-32.7z"
+                                fill="currentColor" />
+                            <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96z"
+                                fill="currentColor" />
+                        </svg></button>
+                    <button class="theme-switch__btn theme-switch__btn--dark"><svg class="icon icon--moon"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <title>bxs-moon</title>
+                            <path
+                                d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142c3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"
+                                fill="currentColor" />
+                        </svg></button>
+                </div>
+
+                <div class="clock">
+                    <h1 class="clock__time">00:00:00</h1>
+                    <p class="clock__date">17 октябрь 2026</p>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container ">
+            <div class="app">
+                <div class="toolbar">
+                    <div class="toolbar__links">
+                        <a href="" class="toolbar__link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 32 32">
+                                <title>home</title>
+                                <path fill="currentColor"
+                                    d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z" />
+                            </svg>Главная</a>
+                        <a href="" class="toolbar__link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1025 1024">
+                                <title>statistics</title>
+                                <path fill="currentColor"
+                                    d="M896.428 1024h-768q-53 0-90.5-37.5T.428 896V128q0-53 37.5-90.5t90.5-37.5h768q53 0 90.5 37.5t37.5 90.5v768q0 53-37.5 90.5t-90.5 37.5m-576-288q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v128q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm256-256q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v384q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5zm256-320q0-13-9.5-22.5t-22.5-9.5h-64q-13 0-22.5 9.5t-9.5 22.5v704q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5t9.5-22.5z" />
+                            </svg>Статистика</a>
+                        <a href="" class="toolbar__link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 14 14">
+                                <title>interface-setting-cog-work-loading-cog-gear-settings-machine</title>
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    d="m5.23 2.25l.43-1.11A1 1 0 0 1 6.59.5h.82a1 1 0 0 1 .93.64l.43 1.11l1.46.84l1.18-.18a1 1 0 0 1 1 .49l.4.7a1 1 0 0 1-.08 1.13l-.73.93v1.68l.75.93a1 1 0 0 1 .08 1.13l-.4.7a1 1 0 0 1-1 .49l-1.18-.18l-1.46.84l-.43 1.11a1 1 0 0 1-.93.64h-.84a1 1 0 0 1-.93-.64l-.43-1.11l-1.46-.84l-1.18.18a1 1 0 0 1-1-.49l-.4-.7a1 1 0 0 1 .08-1.13L2 7.84V6.16l-.75-.93a1 1 0 0 1-.08-1.13l.4-.7a1 1 0 0 1 1-.49l1.18.18ZM5 7a2 2 0 1 0 2-2a2 2 0 0 0-2 2Z" />
+                            </svg>Настройки</a>
+                    </div>
+                    <span class="toolbar__divider"></span>
+                    <div class="sort">
+                        <h1 class="sort__title">Порядок сортировки</h1>
+                        <button class="sort__btn sort__btn--alpha"><svg class="
+                            " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <title>alphabetical</title>
+                                <path fill="currentColor"
+                                    d="M6 11a2 2 0 0 1 2 2v4H4a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2zm-2 2v2h2v-2zm16 0v2h2v2h-2a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h2v2zm-8-6v4h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V7zm0 8h2v-2h-2z" />
+                            </svg>по альфовиту</button>
+                        <button class="sort__btn sort__btn--time"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24">
+                                <title>baseline-access-time</title>
+                                <path fill="currentColor"
+                                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8" />
+                                <path fill="currentColor" d="M12.5 7H11v6l5.25 3.15l.75-1.23l-4.5-2.67z" />
+                            </svg>по времени</button>
+                    </div>
+
+
+                </div>
+                <div class="board">
+                    <div class="todo column column--todo">
+                        <div class="column__header">
+                            <div class="column__header--info">
+                                <h1 class="column__title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 32 32">
+                                        <title>center-circle</title>
+                                        <path fill="currentColor"
+                                            d="M30 15h-2.05A12.01 12.01 0 0 0 17 4.05V2h-2v2.05A12.01 12.01 0 0 0 4.05 15H2v2h2.05A12.01 12.01 0 0 0 15 27.95V30h2v-2.05A12.01 12.01 0 0 0 27.95 17H30ZM17 25.95V22h-2v3.95A10.02 10.02 0 0 1 6.05 17H10v-2H6.05A10.02 10.02 0 0 1 15 6.05V10h2V6.05A10.02 10.02 0 0 1 25.95 15H22v2h3.95A10.02 10.02 0 0 1 17 25.95" />
+                                    </svg>Todo</h1>
+                                <p class="column__desc">Задачи который нужно сделать</p>
+                            </div>
+                            <span class="column__count">0</span>
+                        </div>
+                        <ul class="column__list">
+                        </ul>
+                    </div>
+                    <div class="doing column column--doing">
+                        <div class="column__header">
+                            <div class="column__header--info">
+                                <h1 class="column__title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 56 56">
+                                        <title>arrowtriangle-right-circle-fill</title>
+                                        <path fill="currentColor"
+                                            d="M28 51.906c13.055 0 23.906-10.828 23.906-23.906c0-13.055-10.875-23.906-23.93-23.906C14.899 4.094 4.095 14.945 4.095 28c0 13.078 10.828 23.906 23.906 23.906m-4.29-14.86c-1.077.657-2.296.142-2.296-.983V19.937c0-1.078 1.289-1.546 2.297-.96l13.172 7.804c.96.563.984 1.899 0 2.485Z" />
+                                    </svg> Doing</h1>
+                                <p class="column__desc">Задачи в процессе</p>
+                            </div>
+                            <span class="column__count">0</span>
+                        </div>
+                        <ul class="column__list">
+                        </ul>
+                    </div>
+                    <div class="done column column--done">
+                        <div class="column__header">
+                            <div class="column__header--info">
+                                <h1 class="column__title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 16 16">
+                                        <title>refresh-done-filled</title>
+                                        <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                            <path
+                                                d="M11.354 6.207L7.5 10.061L5.146 7.707L5.854 7L7.5 8.646L10.646 5.5z" />
+                                            <path
+                                                d="M8 2a6 6 0 0 0-5.324 8.769l-.887.462a7 7 0 0 1 10.52-8.749l.652.51L9 4.774v-2.69A6 6 0 0 0 8 2m5.383 3.346a6 6 0 0 0-.393-.679l.831-.556q.255.38.458.792A7 7 0 0 1 3.606 13.45l-.703-.567L7.5 11.3v2.68q.248.02.5.02a6 6 0 0 0 5.383-8.654" />
+                                        </g>
+                                    </svg>Done</h1>
+                                <p class="column__desc">Выпольные задачи</p>
+                            </div>
+                            <span class="column__count">0</span>
+                        </div>
+
+                        <ul class="column__list">
+                        </ul>
+                    </div>
+                </div>
+                <div class="stats stats-panel">
+                    <!-- сделал круг прогресса -->
+                    <div class="progress-card stats__progress-card">
+                        <div class="progress progress-card__circle">
+                            <svg class="progress-card__svg" viewBox="0 0 120 120">
+                                <circle class="track progress-card__track" cx="60" cy="60" r="48" />
+                                <circle class="value progress-card__value" id="progressValue" cx="60" cy="60" r="48" />
+                            </svg>
+
+                            <div class="progress-text progress-card__text">
+                                <span class="percent progress-card__percent" id="percent">25%</span>
+                                <span class="caption progress-card__caption">Выполнено</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <ul class="stats__list stats__list--overview">
+                        <h1 class="stats__title">
+                            <svg class="stats__title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <title>statistic-up</title>
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2">
+                                    <path stroke-miterlimit="5.759" d="M3 3v16a2 2 0 0 0 2 2h16" />
+                                    <path stroke-miterlimit="5.759" d="m7 14l4-4l4 4l6-6" />
+                                    <path d="M18 8h3v3" />
+                                </g>
+                            </svg>Статистика
+                        </h1>
+
+
+
+                        <li class="stats__item stats__item--doing">
+                            <span class="stats__dot stats__dot--doing">
+                                <svg class="stats__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <title>strategy-tasks</title>
+                                    <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linejoin="round"
+                                            d="M7 11.625a2.125 2.125 0 1 0 4.25 0a2.125 2.125 0 0 0-4.25 0ZM13.5 15l3.5 3.5m0-3.5l-3.5 3.5" />
+                                        <path d="M16 3h4.5v19h-17V3H8" />
+                                        <path d="M8 2h8v4H8z" />
+                                    </g>
+                                </svg>
+                            </span>
+                            <p class="stats__label">В процесе</p>
+                            <span class="stats__value">0</span>
+                        </li>
+
+                        <li class="stats__item stats__item--done">
+                            <span class="stats__dot stats__dot--done">
+                                <svg class="stats__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <title>done-ring-round</title>
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+                                        <path d="m9 10l3.258 2.444a1 1 0 0 0 1.353-.142L20 5" />
+                                        <path d="M21 12a9 9 0 1 1-6.67-8.693" />
+                                    </g>
+                                </svg>
+                            </span>
+                            <p class="stats__label">Готово</p>
+                            <span class="stats__value">0</span>
+                        </li>
+
+                        <li class="stats__item stats__item--overdue">
+                            <span class="stats__dot stats__dot--overdue">
+                                <svg class="stats__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <title>trash-can</title>
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16l-1.58 14.22A2 2 0 0 1 16.432 22H7.568a2 2 0 0 1-1.988-1.78zm3.345-2.853A2 2 0 0 1 9.154 2h5.692a2 2 0 0 1 1.81 1.147L18 6H6zM2 6h20m-12 5v5m4-5v5" />
+                                </svg>
+                            </span>
+                            <p class="stats__label">Просрочено</p>
+                            <span class="stats__value">0</span>
+                        </li>
+                    </ul>
+
+                    <div class="stats__actions">
+                        <h1 class="stats__title">
+                            <svg class="stats__title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 512 512">
+                                <title>actionscript</title>
+                                <path fill="currentColor"
+                                    d="M371.984 305.035c-13.512 50.421-65.335 80.346-115.76 66.832c-50.413-13.507-80.338-65.337-66.829-115.755c13.512-50.42 65.335-80.341 115.753-66.832c50.425 13.513 80.345 65.333 66.836 115.755m50.755-62.632c-11.252-37.641-8.781-85.581 1.538-125.371C436.646 69.336 403.557 16.19 355.01 3.183C305.54-10.07 250.636 19.276 237.63 68.714c-9.964 37.88-30.14 75.11-56.251 103.12c-29.642 31.132-67.354 53.261-109.624 64.586c-51.499 13.8-82.087 66.826-68.284 118.34c13.815 51.5 66.762 82.09 118.284 68.272c38.458-9.816 83.883-12.17 120.92-.59c44.85 14.024 75.184 31.778 109.082 64.938c36.67 35.872 97.125 30.817 131.917-3.967c35.313-35.3 38.553-96.17 3.28-132.798c-29.76-30.902-50.321-61.734-64.216-108.212" />
+                            </svg>Быстрые действия
+                        </h1>
+
+                        <ul class="stats__actions-list">
+                            <li class="stats__action stats__action--clear">
+                                <span class="stats__action-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <title>baseline-download-done</title>
+                                        <path fill="currentColor"
+                                            d="M20.13 5.41L18.72 4l-9.19 9.19l-4.25-4.24l-1.41 1.41l5.66 5.66zM5 18h14v2H5z" />
+                                    </svg>
+                                </span>
+                                <button class="stats__action-btn stats__action-btn--clear">Очистить выпольненый</button>
+                            </li>
+
+                            <li class="stats__action stats__action--reset">
+                                <span class="stats__action-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 21 21">
+                                        <title>reset</title>
+                                        <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M3.578 6.487A8 8 0 1 1 2.5 10.5" />
+                                            <path d="M7.5 6.5h-4v-4" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <button class="stats__action-btn stats__action-btn--reset">Сбросить всё</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container ">
+            <div class="delete-zone">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <title>trash-2</title>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 6h18m-2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-6 5v6m4-6v6" />
+                    </svg></span>
+                <div class="delete-zone__info">
+                    <h1 class="delete-zone__title">Удаление</h1>
+                    <p class="delete-zone__text">Переташи суда для удаление заметки</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+ <script src="app.js"></script>
+</body>
+
+</html>
